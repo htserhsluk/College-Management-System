@@ -1,0 +1,2 @@
+void adminMenu();
+void adminPortal();

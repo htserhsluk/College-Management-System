@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "SQL.h"
+#include "notice_board.h"
+
 
 // Predefined admin credentials
 #define ADMIN_USERNAME "admin"
@@ -9,7 +11,6 @@
 void adminMenu() {
     int choice;
     while (1) {
-        system("clear");
         printf("\nAdmin Menu");
         printf("\n==========\n");
         printf("1. Add student\n2. Remove student\n3. Add professor\n4. Remove professor\n5. Retrieve all students\n6. Retrieve all professors\n7. Post Notice\n8. Logout\n");
@@ -36,7 +37,7 @@ void adminMenu() {
                 retrieve_profs();
                 break;
             case 7:
-                post_notice();
+                create_notice();
                 break;
             case 8:
                 return;
@@ -48,8 +49,6 @@ void adminMenu() {
 
 void adminPortal() {
     char username[30], password[30];
-    system("clear");
-
     printf("\nAdmin Login\n");
     printf("Username: ");
     scanf("%s", username);
